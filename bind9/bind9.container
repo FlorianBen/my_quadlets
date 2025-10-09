@@ -1,0 +1,19 @@
+[Unit]
+Description=Bind9 service
+Wants=network-online.target
+
+[Container]
+Label=app=bind9
+ContainerName=bind9-container
+Image=docker.io/ubuntu/bind9
+Environment=TZ=UTC
+Environment=BIND9_USER=bind
+#Volume=/var/local/data/bind9/conf/named.conf:/etc/bind/named.conf
+#Volume=/var/local/data/bind9/cache:/var/cache/bind/
+#Volume=/var/local/data/bind9/lib:/var/lib/bind/
+#Volume=/var/local/data/bind9/log:/var/log/
+PublishPort=30053:53/tcp
+PublishPort=30053:53/udp
+
+[Install]
+WantedBy=default.target

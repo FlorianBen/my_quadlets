@@ -1,0 +1,15 @@
+[Unit]
+Description=kanboard container
+Wants=network-online.target
+
+[Container]
+ContainerName=kanboard
+Image=docker.io/kanboard/kanboard:latest
+PublishPort=8888:80
+PublishPort=443:443
+Volume=kanboard-data.volume:/var/www/app/data
+Volume=kanboard-plugins.volume:/var/www/app/plugins
+Volume=kanboard-certs.volume:/etc/nginx/ssl
+
+[Install]
+WantedBy=default.target

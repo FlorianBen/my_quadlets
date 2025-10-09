@@ -1,0 +1,12 @@
+[Unit]
+Description=Grafana service
+Wants=network-online.target
+
+[Container]
+Label=app=grafana
+ContainerName=grafana
+Image=docker.io/grafana/grafana
+PublishPort=3000:3000
+
+[Install]
+WantedBy=default.target

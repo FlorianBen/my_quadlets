@@ -1,0 +1,16 @@
+[Unit]
+Description=Netboot.xyz service
+After=network-online.target
+
+[Container]
+Label=app=netbootxyz
+ContainerName=netbootxyz
+Image=ghcr.io/netbootxyz/netbootxyz
+Environment=NGINX_PORT=80 
+Environment=WEB_APP_PORT=4000 
+PublishPort=4000:4000
+PublishPort=69:69/udp                       
+PublishPort=8080:80  
+
+[Install]
+WantedBy=default.target
