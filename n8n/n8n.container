@@ -1,0 +1,10 @@
+# n8n.container
+[Container]
+ContainerName=n8n
+Environment=GENERIC_TIMEZONE=Europe/Paris TZ=Europe/Paris N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true N8N_RUNNERS_ENABLED=true N8N_SECURE_COOKIE=false
+Image=docker.io/n8nio/n8n:stable
+PublishPort=5678:5678
+Volume=n8n_data:/home/node/.n8n
+
+[Install]
+WantedBy=default.target
