@@ -1,0 +1,17 @@
+[Unit]
+Requires=gitea-db.service
+After=gitea-db.service
+
+[Container]
+ContainerName=gitea
+Environment=USER_UID=1000 USER_GID=1000 GITEA__database__DB_TYPE=postgres GITEA__database__HOST=db:5432 GITEA__database__NAME=gitea GITEA__database__USER=gitea GITEA__database__PASSWD=gitea
+Image=docker.gitea.com/gitea:1.24.6
+Network=gitea.network
+PublishPort=3333:3000
+PublishPort=222:22
+Volume=gitea.volume:/data
+Volume=/etc/timezone:/etc/timezone:ro
+Volume=/etc/localtime:/etc/localtime:ro
+
+[Service]
+Restart=always

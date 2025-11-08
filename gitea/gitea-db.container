@@ -1,0 +1,11 @@
+# gitea-db.container
+[Container]
+ContainerName=gitea-db
+HostName=db
+Environment=POSTGRES_USER=gitea POSTGRES_PASSWORD=gitea POSTGRES_DB=gitea
+Image=docker.io/postgres:alpine
+Network=gitea.network
+Volume=gitea-db.volume:/var/lib/postgresql/data
+
+[Service]
+Restart=always
