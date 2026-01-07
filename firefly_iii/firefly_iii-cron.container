@@ -5,9 +5,10 @@ After=firefly_iii.service
 
 [Container]
 ContainerName=firefly_iii_cron
-User=root
 EnvironmentFile=/etc/containers/systemd/env/firefly_iii.env
-Exec=sh -c "echo \"0 3 * * * wget -qO- http://app:8080/api/v1/cron/$$STATIC_CRON_TOKEN;echo\" crontab - && crond -f -L /dev/stdout"
+#Exec=sh -c "echo \"0 3 * * * wget -qO- http://app:8080/api/v1/cron/$$STATIC_CRON_TOKEN;echo\" crontab - && crond -f -L /dev/stdout"
+#Exec=sh -c "apk add tzdata && (ln -s /usr/share/zoneinfo/$$TZ /etc/localtime || true) && echo \"0 3 * * * wget -qO- http://app:8080/api/v1/cron/$$STATIC_CRON_TOKEN;echo\" | crontab - && crond -f -L /dev/stdout"
+Exec=sh -c "echo \"0 3 * * * wget -qO- http://app:8080/api/v1/cron/$$STATIC_CRON_TOKEN;echo\" | crontab - && crond -f -L /dev/stdout"
 Image=alpine
 Network=firefly_iii.network
 
