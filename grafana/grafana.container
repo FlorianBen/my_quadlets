@@ -5,7 +5,9 @@ Wants=network-online.target
 [Container]
 Label=app=grafana
 ContainerName=grafana
-Image=docker.io/grafana/grafana
+Image=docker.io/grafana/grafana:latest
+AutoUpdate=registry
+
 PublishPort=3000:3000
 
 [Install]

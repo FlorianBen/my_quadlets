@@ -1,5 +1,6 @@
 # cron.container
 [Unit]
+Description=Firefly cron service
 Requires=firefly_iii.service
 After=firefly_iii.service
 
@@ -9,7 +10,8 @@ EnvironmentFile=/etc/containers/systemd/env/firefly_iii.env
 #Exec=sh -c "echo \"0 3 * * * wget -qO- http://app:8080/api/v1/cron/$$STATIC_CRON_TOKEN;echo\" crontab - && crond -f -L /dev/stdout"
 #Exec=sh -c "apk add tzdata && (ln -s /usr/share/zoneinfo/$$TZ /etc/localtime || true) && echo \"0 3 * * * wget -qO- http://app:8080/api/v1/cron/$$STATIC_CRON_TOKEN;echo\" | crontab - && crond -f -L /dev/stdout"
 Exec=sh -c "echo \"0 3 * * * wget -qO- http://app:8080/api/v1/cron/$$STATIC_CRON_TOKEN;echo\" | crontab - && crond -f -L /dev/stdout"
-Image=alpine
+Image=docker.io/library/alpine:latest
+AutoUpdate=registry
 Network=firefly_iii.network
 
 [Service]

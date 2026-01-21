@@ -2,6 +2,7 @@
 ContainerName=firefly_iii_db
 HostName=db
 Image=docker.io/postgres:alpine
+AutoUpdate=registry
 EnvironmentFile=/etc/containers/systemd/env/firefly_iii-db.env
 Network=firefly_iii.network
 Volume=firefly_iii_db:/var/lib/postgresql/data

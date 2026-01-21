@@ -5,6 +5,7 @@ Wants=network-online.target
 [Container]
 ContainerName=kanboard
 Image=docker.io/kanboard/kanboard:latest
+AutoUpdate=registry
 PublishPort=8888:80
 PublishPort=443:443
 Volume=kanboard-data.volume:/var/www/app/data

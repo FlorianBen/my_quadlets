@@ -4,6 +4,7 @@ ContainerName=gitea-db
 HostName=db
 Environment=POSTGRES_USER=gitea POSTGRES_PASSWORD=gitea POSTGRES_DB=gitea
 Image=docker.io/postgres:alpine
+AutoUpdate=registry
 Network=gitea.network
 Volume=gitea-db.volume:/var/lib/postgresql/data
 
