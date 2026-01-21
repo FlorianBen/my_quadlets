@@ -1,0 +1,10 @@
+# nextcloud.container
+[Container]
+ContainerName=nextcloud
+Image=docker.io/library/nextcloud:stable
+PublishPort=7070:80
+Volume=nextcloud_data:/var/www/html
+Network=nextcloud.network
+
+[Service]
+Restart=always

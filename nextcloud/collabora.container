@@ -1,0 +1,9 @@
+[Container]
+ContainerName=collabora_online
+Environment="extra_params=--o:ssl.enable=false --o:user_interface.use_integration_theme=false"
+Image=docker.io/collabora/code:latest
+PublishPort=9980:9980
+Network=nextcloud.network
+
+[Service]
+Restart=always
