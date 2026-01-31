@@ -5,7 +5,6 @@ After=network-online.target
 [Container]
 ContainerName=ollama
 Image=docker.io/ollama/ollama:latest
-AutoUpdate=registry
 PublishPort=11434:11434
 Volume=ollama:/root/.ollama
 Network=ollama.network

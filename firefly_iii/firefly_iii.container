@@ -7,7 +7,6 @@ ContainerName=firefly_iii_core
 EnvironmentFile=/etc/containers/systemd/env/firefly_iii.env
 HostName=app
 Image=docker.io/fireflyiii/core:latest
-AutoUpdate=registry
 Network=firefly_iii.network
 PublishPort=7777:8080
 Volume=firefly_iii_upload:/var/www/html/storage/upload

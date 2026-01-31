@@ -6,7 +6,6 @@ After=network-online.target
 Label=app=netbootxyz
 ContainerName=netbootxyz
 Image=ghcr.io/netbootxyz/netbootxyz
-AutoUpdate=registry
 Environment=NGINX_PORT=80 
 Environment=WEB_APP_PORT=4000 
 PublishPort=4000:4000
