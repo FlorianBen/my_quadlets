@@ -1,0 +1,12 @@
+[Unit]
+Description=Nginx container
+After=network-online.target
+
+[Container]
+ContainerName=nginx
+Image=docker.io/library/nginx:stable-alpine
+AutoUpdate=registry
+PublishPort=8080:80
+
+[Install]
+WantedBy=default.target
