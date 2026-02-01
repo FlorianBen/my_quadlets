@@ -24,9 +24,9 @@ fi
 # # Copy quadlet files to the destination directory
 echo "Installing quadlet files from $QUADLET_DIR to $DEST_DIR"
 cp "$QUADLET_DIR"/*.container "$DEST_DIR" 2>/dev/null
-# cp "$QUADLET_DIR"/*.volume "$DEST_DIR" 2>/dev/null
-# cp "$QUADLET_DIR"/*.network "$DEST_DIR" 2>/dev/null
-# cp "$QUADLET_DIR"/*.env "$DEST_DIR"/env 2>/dev/null
+cp "$QUADLET_DIR"/*.volume "$DEST_DIR" 2>/dev/null
+cp "$QUADLET_DIR"/*.network "$DEST_DIR" 2>/dev/null
+cp "$QUADLET_DIR"/*.env "$DEST_DIR"/env 2>/dev/null
 
 # # Reload systemd to apply changes
 echo "Reloading systemd daemon"
