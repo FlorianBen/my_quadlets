@@ -5,6 +5,8 @@ After=network-online.target
 [Container]
 ContainerName=nginx
 Image=docker.io/library/nginx:stable-alpine
+Volume=nginx-conf:/etc/nginx/
+Volume=data-conf:/usr/share/nginx/html
 PublishPort=8080:80
 
 [Install]

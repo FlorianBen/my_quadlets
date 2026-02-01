@@ -1,0 +1,10 @@
+[Unit]
+Description=Certbot container
+After=network-online.target
+
+[Container]
+ContainerName=certbot
+Image=docker.io/certbot/dns-ovh:latest
+
+[Install]
+WantedBy=default.target
